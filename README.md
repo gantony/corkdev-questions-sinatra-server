@@ -20,10 +20,14 @@ This sample was generated with the [swagger-codegen](https://github.com/swagger-
 rackup -p 4567 config.ru
 ```
 
-In your [swagger ui](https://github.com/swagger-api/swagger-ui), put in the following URL:
+In your [swagger-ui](https://github.com/swagger-api/swagger-ui), put in the following URL:
 
 ```
-http://localhost:4567/resources.json
+http://localhost:4567/swagger.yaml
 ```
+
+## Known issues
+For some reason sending the POST messages within swagger-ui does not work, but sending the exact same message with curl from the shell does work... Not sure what's happening here!
+
 
 Voila!
