@@ -19,7 +19,8 @@ class MyAppLogic
 
   def self.upvote_question id
     question = @@questions.select { |q| q[:id] == id } .first
-    question[:votes] += 1    
+    question[:votes] += 1
+    question
   end
   
 

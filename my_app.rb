@@ -1,4 +1,5 @@
 require './lib/swaggering'
+require './my_app_logic'
 
 # only need to extend if you want special configuration!
 class MyApp < Swaggering

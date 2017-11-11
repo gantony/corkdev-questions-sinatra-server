@@ -60,7 +60,8 @@ MyApp.add_route('POST', '/gantony/CorkDevQuestions/1.0.0/questions/{id}/votes', 
   cross_origin
   # the guts live here
 
-  # TODO: Implement this!
-  {"message" => "yes, it worked"}.to_json
+  updated_question = MyAppLogic.upvote_question params['id'].to_i
+
+  updated_question.to_json
 end
 
