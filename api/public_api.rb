@@ -19,7 +19,10 @@ MyApp.add_route('POST', '/gantony/CorkDevQuestions/1.0.0/questions', {
   cross_origin
   # the guts live here
 
-  {"message" => "yes, it worked"}.to_json
+  request_json = JSON.parse(request.body.read)
+  new_question = MyAppLogic.add_question request_json["question"]
+
+  new_question.to_json
 end
 
 
@@ -35,7 +38,7 @@ MyApp.add_route('GET', '/gantony/CorkDevQuestions/1.0.0/questions', {
   cross_origin
   # the guts live here
 
-  {"message" => "yes, it worked"}.to_json
+  MyAppLogic.list_questions.to_json
 end
 
 
@@ -57,6 +60,7 @@ MyApp.add_route('POST', '/gantony/CorkDevQuestions/1.0.0/questions/{id}/votes', 
   cross_origin
   # the guts live here
 
+  # TODO: Implement this!
   {"message" => "yes, it worked"}.to_json
 end
 
