@@ -22,10 +22,15 @@ class MyAppLogic
     question[:votes] += 1
     question
   end
-  
+
 
   def self.list_questions
     @@questions
+  end
+
+  def self.reset
+    @@id_counter = 0
+    @@questions = []
   end
 end
 
